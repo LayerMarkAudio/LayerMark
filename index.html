@@ -52,7 +52,7 @@
         <div class="shell narrow">
           <h2>Abstract</h2>
           <p class="lead">
-            Existing audio watermarking methods are primarily designed for single-message embedding, so a newly embedded watermark can overwrite earlier messages. LayerMark introduces a Multi-Layer Adapter to reduce inter-layer feature overlap during writing and a Multi-Layer Remover to progressively expose earlier messages during detection. Across four embedding layers, LayerMark retains multi-message detection while achieving an SNR of 33.62 dB, and it generalizes to unseen speech datasets and common audio transformations.
+            Audio watermarking has become an important technique for modern copyright protection by embedding identifiable information into audio signals. However, existing watermarking methods are primarily designed for single-message embedding, where newly embedded watermarks may overwrite previously embedded messages and lead to the loss of earlier watermark information. We observe feature overlap between different watermark messages as a key cause of this limitation. To address this limitation, we propose LayerMark, which introduces a Multi-Layer Adapter to reduce inter-layer feature overlap during embedding and a Multi-Layer Remover to progressively expose earlier embedded messages during detection. Experiments show that LayerMark detects messages across all four embedding layers while achieving an SNR of 33.62 dB. It also generalizes well to five unseen speech datasets, maintaining a macro-average PESQ of 4.137 and STOI of 0.988 after four sequential watermark embeddings, while demonstrating robustness to eight common audio transformations.
           </p>
         </div>
       </section>
