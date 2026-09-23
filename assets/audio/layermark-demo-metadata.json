@@ -1,0 +1,95 @@
+{
+  "description": "LayerMark website demo audio exported from a local trained checkpoint.",
+  "checkpoint": ".cache/trainable_peeling/stage_three_e/exp54_o4_matched_seed29/best.pt",
+  "checkpoint_sha256": "33c358235d1bd7da882c4afb29e00a0212b43efc8b63f956ea273720f122e73b",
+  "checkpoint_best_epoch": 3,
+  "checkpoint_experiment": "Exp54 matched retraining",
+  "checkpoint_arm": "O4",
+  "sample_rate": 16000,
+  "samples": [
+    {
+      "sample": "sample-a",
+      "source": "data/external_speech/librispeech/1272_128104_0000.wav",
+      "original": "assets/audio/sample-a-original.wav",
+      "layers": [
+        {
+          "layer": 1,
+          "path": "assets/audio/sample-a-l1.wav",
+          "snr_db": 26.1322,
+          "message_identity": 9,
+          "message_bits": "0001001110011000"
+        },
+        {
+          "layer": 2,
+          "path": "assets/audio/sample-a-l2.wav",
+          "snr_db": 24.2533,
+          "message_identity": 37,
+          "message_bits": "0100101010000110"
+        },
+        {
+          "layer": 3,
+          "path": "assets/audio/sample-a-l3.wav",
+          "snr_db": 23.1685,
+          "message_identity": 85,
+          "message_bits": "1010101111001011"
+        }
+      ]
+    },
+    {
+      "sample": "sample-b",
+      "source": "data/external_speech/librispeech/1272_128104_0001.wav",
+      "original": "assets/audio/sample-b-original.wav",
+      "layers": [
+        {
+          "layer": 1,
+          "path": "assets/audio/sample-b-l1.wav",
+          "snr_db": 28.6703,
+          "message_identity": 17,
+          "message_bits": "0010001111010110"
+        },
+        {
+          "layer": 2,
+          "path": "assets/audio/sample-b-l2.wav",
+          "snr_db": 27.0083,
+          "message_identity": 55,
+          "message_bits": "0110111000010101"
+        },
+        {
+          "layer": 3,
+          "path": "assets/audio/sample-b-l3.wav",
+          "snr_db": 25.9684,
+          "message_identity": 101,
+          "message_bits": "1100101101010111"
+        }
+      ]
+    },
+    {
+      "sample": "sample-c",
+      "source": "data/external_speech/librispeech/1272_128104_0002.wav",
+      "original": "assets/audio/sample-c-original.wav",
+      "layers": [
+        {
+          "layer": 1,
+          "path": "assets/audio/sample-c-l1.wav",
+          "snr_db": 28.8903,
+          "message_identity": 25,
+          "message_bits": "0011001111101101"
+        },
+        {
+          "layer": 2,
+          "path": "assets/audio/sample-c-l2.wav",
+          "snr_db": 27.4505,
+          "message_identity": 73,
+          "message_bits": "1001001001001001"
+        },
+        {
+          "layer": 3,
+          "path": "assets/audio/sample-c-l3.wav",
+          "snr_db": 26.3034,
+          "message_identity": 113,
+          "message_bits": "1110001011101110"
+        }
+      ]
+    }
+  ]
+}
