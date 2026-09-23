@@ -1,3 +1,5 @@
+document.documentElement.classList.add("js");
+
 const players = Array.from(document.querySelectorAll("audio"));
 
 const formatTime = (seconds) => {
@@ -123,3 +125,65 @@ for (const wrapper of document.querySelectorAll(".mini-player")) {
   });
 }
 if (window.lucide) lucide.createIcons();
+
+const revealGroups = [
+  ".hero-content",
+  ".abstract-section .narrow",
+  ".section-heading",
+  ".figure-frame",
+  ".audio-status",
+  ".audio-table",
+  ".baseline-source",
+  ".comparison-note",
+  ".comparison-table",
+  ".metrics-grid",
+  ".result-figure",
+  ".result-table-wrap",
+];
+
+const revealElements = revealGroups.flatMap((selector) =>
+  Array.from(document.querySelectorAll(selector)),
+);
+revealElements.forEach((element, index) => {
+  element.classList.add("reveal", `reveal-delay-${index % 3}`);
+});
+
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    },
+    { threshold: 0.12, rootMargin: "0px 0px -36px" },
+  );
+  revealElements.forEach((element) => revealObserver.observe(element));
+} else {
+  revealElements.forEach((element) => element.classList.add("is-visible"));
+}
+
+const navigationLinks = Array.from(document.querySelectorAll(".nav-links a"));
+const navigationSections = navigationLinks
+  .map((link) => document.querySelector(link.getAttribute("href")))
+  .filter(Boolean);
+
+if ("IntersectionObserver" in window) {
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (!visible) return;
+      navigationLinks.forEach((link) => {
+        const active = link.getAttribute("href") === `#${visible.target.id}`;
+        link.classList.toggle("is-active", active);
+        if (active) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
+      });
+    },
+    { threshold: [0.2, 0.45], rootMargin: "-15% 0px -60%" },
+  );
+  navigationSections.forEach((section) => sectionObserver.observe(section));
+}
