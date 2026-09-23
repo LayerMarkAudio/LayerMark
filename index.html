@@ -90,8 +90,8 @@
           </div>
 
           <div class="audio-status" aria-label="Audio availability legend">
-            <span>Original audio</span>
-            <span>Sequential embedding of one to three watermark messages</span>
+            <span>16-kHz speech from LibriSpeech</span>
+            <span>Direct bit accuracy of the latest embedded message</span>
           </div>
 
           <div class="audio-table" role="table" aria-label="LayerMark sequential watermark examples">
@@ -104,23 +104,23 @@
 
             <div class="audio-row" role="row">
               <div role="cell"><audio controls preload="metadata" src="assets/audio/sample-a-original.wav">Audio playback is not supported.</audio></div>
-              <div role="cell"><audio controls preload="metadata" src="assets/audio/sample-a-l1.wav">Audio playback is not supported.</audio></div>
-              <div role="cell"><audio controls preload="metadata" src="assets/audio/sample-a-l2.wav">Audio playback is not supported.</audio></div>
-              <div role="cell"><audio controls preload="metadata" src="assets/audio/sample-a-l3.wav">Audio playback is not supported.</audio></div>
+              <div role="cell"><audio controls preload="metadata" src="assets/audio/sample-a-l1.wav">Audio playback is not supported.</audio><small class="audio-metric">Latest-message bit accuracy: 1.000</small></div>
+              <div role="cell"><audio controls preload="metadata" src="assets/audio/sample-a-l2.wav">Audio playback is not supported.</audio><small class="audio-metric">Latest-message bit accuracy: 1.000</small></div>
+              <div role="cell"><audio controls preload="metadata" src="assets/audio/sample-a-l3.wav">Audio playback is not supported.</audio><small class="audio-metric">Latest-message bit accuracy: 1.000</small></div>
             </div>
 
             <div class="audio-row" role="row">
               <div role="cell"><audio controls preload="metadata" src="assets/audio/sample-b-original.wav">Audio playback is not supported.</audio></div>
-              <div role="cell"><audio controls preload="metadata" src="assets/audio/sample-b-l1.wav">Audio playback is not supported.</audio></div>
-              <div role="cell"><audio controls preload="metadata" src="assets/audio/sample-b-l2.wav">Audio playback is not supported.</audio></div>
-              <div role="cell"><audio controls preload="metadata" src="assets/audio/sample-b-l3.wav">Audio playback is not supported.</audio></div>
+              <div role="cell"><audio controls preload="metadata" src="assets/audio/sample-b-l1.wav">Audio playback is not supported.</audio><small class="audio-metric">Latest-message bit accuracy: 1.000</small></div>
+              <div role="cell"><audio controls preload="metadata" src="assets/audio/sample-b-l2.wav">Audio playback is not supported.</audio><small class="audio-metric">Latest-message bit accuracy: 1.000</small></div>
+              <div role="cell"><audio controls preload="metadata" src="assets/audio/sample-b-l3.wav">Audio playback is not supported.</audio><small class="audio-metric">Latest-message bit accuracy: 0.938</small></div>
             </div>
 
             <div class="audio-row" role="row">
               <div role="cell"><audio controls preload="metadata" src="assets/audio/sample-c-original.wav">Audio playback is not supported.</audio></div>
-              <div role="cell"><audio controls preload="metadata" src="assets/audio/sample-c-l1.wav">Audio playback is not supported.</audio></div>
-              <div role="cell"><audio controls preload="metadata" src="assets/audio/sample-c-l2.wav">Audio playback is not supported.</audio></div>
-              <div role="cell"><audio controls preload="metadata" src="assets/audio/sample-c-l3.wav">Audio playback is not supported.</audio></div>
+              <div role="cell"><audio controls preload="metadata" src="assets/audio/sample-c-l1.wav">Audio playback is not supported.</audio><small class="audio-metric">Latest-message bit accuracy: 1.000</small></div>
+              <div role="cell"><audio controls preload="metadata" src="assets/audio/sample-c-l2.wav">Audio playback is not supported.</audio><small class="audio-metric">Latest-message bit accuracy: 1.000</small></div>
+              <div role="cell"><audio controls preload="metadata" src="assets/audio/sample-c-l3.wav">Audio playback is not supported.</audio><small class="audio-metric">Latest-message bit accuracy: 0.938</small></div>
             </div>
           </div>
         </div>
@@ -149,8 +149,8 @@
           </div>
 
           <div class="comparison-note">
-            <span>Sequential embedding</span>
-            <span>E1--E3: one to three sequentially embedded messages</span>
+            <span>Same 16-kHz LibriSpeech source for every method</span>
+            <span>Labels report cumulative SNR relative to the original audio</span>
           </div>
 
           <div class="comparison-table" role="table" aria-label="Baseline audio comparison">
@@ -162,29 +162,30 @@
             </div>
             <div class="comparison-row" role="row">
               <div class="method-name" role="rowheader"><strong>Timbre</strong></div>
-              <div class="mini-player" data-layer="E1"><button type="button" aria-label="Play Timbre audio after one embedding">▶</button><div><span>E1</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/timbre-sample-a-l1.wav"></audio></div>
-              <div class="mini-player" data-layer="E2"><button type="button" aria-label="Play Timbre audio after two embeddings">▶</button><div><span>E2</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/timbre-sample-a-l2.wav"></audio></div>
-              <div class="mini-player" data-layer="E3"><button type="button" aria-label="Play Timbre audio after three embeddings">▶</button><div><span>E3</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/timbre-sample-a-l3.wav"></audio></div>
+              <div class="mini-player" data-layer="E1"><button type="button" aria-label="Play Timbre audio after one embedding">▶</button><div><span>E1 · 21.29 dB</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/timbre-sample-a-l1.wav"></audio></div>
+              <div class="mini-player" data-layer="E2"><button type="button" aria-label="Play Timbre audio after two embeddings">▶</button><div><span>E2 · 16.99 dB</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/timbre-sample-a-l2.wav"></audio></div>
+              <div class="mini-player" data-layer="E3"><button type="button" aria-label="Play Timbre audio after three embeddings">▶</button><div><span>E3 · 14.25 dB</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/timbre-sample-a-l3.wav"></audio></div>
             </div>
             <div class="comparison-row" role="row">
               <div class="method-name" role="rowheader"><strong>AudioSeal</strong></div>
-              <div class="mini-player" data-layer="E1"><button type="button" aria-label="Play AudioSeal audio after one embedding">▶</button><div><span>E1</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/audioseal-sample-a-l1.wav"></audio></div>
-              <div class="mini-player" data-layer="E2"><button type="button" aria-label="Play AudioSeal audio after two embeddings">▶</button><div><span>E2</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/audioseal-sample-a-l2.wav"></audio></div>
-              <div class="mini-player" data-layer="E3"><button type="button" aria-label="Play AudioSeal audio after three embeddings">▶</button><div><span>E3</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/audioseal-sample-a-l3.wav"></audio></div>
+              <div class="mini-player" data-layer="E1"><button type="button" aria-label="Play AudioSeal audio after one embedding">▶</button><div><span>E1 · 24.29 dB</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/audioseal-sample-a-l1.wav"></audio></div>
+              <div class="mini-player" data-layer="E2"><button type="button" aria-label="Play AudioSeal audio after two embeddings">▶</button><div><span>E2 · 22.05 dB</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/audioseal-sample-a-l2.wav"></audio></div>
+              <div class="mini-player" data-layer="E3"><button type="button" aria-label="Play AudioSeal audio after three embeddings">▶</button><div><span>E3 · 20.60 dB</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/audioseal-sample-a-l3.wav"></audio></div>
             </div>
             <div class="comparison-row" role="row">
               <div class="method-name" role="rowheader"><strong>WavMark</strong></div>
-              <div class="mini-player" data-layer="E1"><button type="button" aria-label="Play WavMark audio after one embedding">▶</button><div><span>E1</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/wavmark-sample-a-l1.wav"></audio></div>
-              <div class="mini-player" data-layer="E2"><button type="button" aria-label="Play WavMark audio after two embeddings">▶</button><div><span>E2</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/wavmark-sample-a-l2.wav"></audio></div>
-              <div class="mini-player" data-layer="E3"><button type="button" aria-label="Play WavMark audio after three embeddings">▶</button><div><span>E3</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/wavmark-sample-a-l3.wav"></audio></div>
+              <div class="mini-player" data-layer="E1"><button type="button" aria-label="Play WavMark audio after one embedding">▶</button><div><span>E1 · 34.59 dB</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/wavmark-sample-a-l1.wav"></audio></div>
+              <div class="mini-player" data-layer="E2"><button type="button" aria-label="Play WavMark audio after two embeddings">▶</button><div><span>E2 · 31.50 dB</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/wavmark-sample-a-l2.wav"></audio></div>
+              <div class="mini-player" data-layer="E3"><button type="button" aria-label="Play WavMark audio after three embeddings">▶</button><div><span>E3 · 28.29 dB</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/wavmark-sample-a-l3.wav"></audio></div>
             </div>
             <div class="comparison-row ours" role="row">
               <div class="method-name" role="rowheader"><strong>LayerMark (Ours)</strong></div>
-              <div class="mini-player" data-layer="E1"><button type="button" aria-label="Play LayerMark audio after one embedding">▶</button><div><span>E1</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/sample-a-l1.wav"></audio></div>
-              <div class="mini-player" data-layer="E2"><button type="button" aria-label="Play LayerMark audio after two embeddings">▶</button><div><span>E2</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/sample-a-l2.wav"></audio></div>
-              <div class="mini-player" data-layer="E3"><button type="button" aria-label="Play LayerMark audio after three embeddings">▶</button><div><span>E3</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/sample-a-l3.wav"></audio></div>
+              <div class="mini-player" data-layer="E1"><button type="button" aria-label="Play LayerMark audio after one embedding">▶</button><div><span>E1 · 26.13 dB</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/sample-a-l1.wav"></audio></div>
+              <div class="mini-player" data-layer="E2"><button type="button" aria-label="Play LayerMark audio after two embeddings">▶</button><div><span>E2 · 24.25 dB</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/sample-a-l2.wav"></audio></div>
+              <div class="mini-player" data-layer="E3"><button type="button" aria-label="Play LayerMark audio after three embeddings">▶</button><div><span>E3 · 23.17 dB</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/sample-a-l3.wav"></audio></div>
             </div>
           </div>
+          <p class="protocol-note">The examples use each method's official released checkpoint and sequentially embed each message into the preceding output. Timbre's stronger degradation at E2 and E3 is retained as produced under this shared protocol.</p>
         </div>
       </section>
 
@@ -208,6 +209,11 @@
           </div>
 
           <div class="result-layout">
+            <figure class="result-figure">
+              <img src="assets/images/bit-accuracy-layers.png" alt="Mean bit accuracy across one to seven watermark layers on LibriSpeech, AISHELL-1, and VCTK">
+              <figcaption>Mean bit accuracy decreases as more watermark messages coexist in the same audio.</figcaption>
+            </figure>
+
             <div class="result-table-wrap">
               <h3>Multi-layer detection accuracy and audio quality</h3>
               <table>
@@ -220,7 +226,7 @@
                   <tr class="highlight"><td>LayerMark</td><td>0.81</td><td>0.89</td><td>0.94</td><td>1.00</td></tr>
                 </tbody>
               </table>
-              <p class="table-note">Bit accuracy values reproduced from Table 1.</p>
+              <p class="table-note">Bit accuracy values are the end-to-end recursive detection results reproduced from Table 1. A value of 0.00 means the corresponding message was not reached after an earlier identity rejection; it is not the conditional Detector bit accuracy at a successfully reached layer.</p>
             </div>
           </div>
         </div>
@@ -234,7 +240,8 @@
   title     = {LayerMark: Multi-Message Audio Watermarking with
                Feature Overlap-Aware Embedding and Recursive Detection},
   author    = {Yan, Zhiheng and Ma, Binhao and Duan, Rui and Guo, Hanqing},
-  note      = {Research manuscript}
+  booktitle = {Proceedings of IEEE ICASSP},
+  year      = {forthcoming}
 }</code></pre>
           <p class="citation-note">Publication metadata will be updated after the final proceedings record is available.</p>
         </div>

@@ -17,21 +17,27 @@
           "path": "assets/audio/sample-a-l1.wav",
           "snr_db": 26.1322,
           "message_identity": 9,
-          "message_bits": "0001001110011000"
+          "message_bits": "0001001110011000",
+          "latest_message_bit_accuracy": 1.0,
+          "presence_score": 0.9999
         },
         {
           "layer": 2,
           "path": "assets/audio/sample-a-l2.wav",
           "snr_db": 24.2533,
           "message_identity": 37,
-          "message_bits": "0100101010000110"
+          "message_bits": "0100101010000110",
+          "latest_message_bit_accuracy": 1.0,
+          "presence_score": 1.0
         },
         {
           "layer": 3,
           "path": "assets/audio/sample-a-l3.wav",
           "snr_db": 23.1685,
           "message_identity": 85,
-          "message_bits": "1010101111001011"
+          "message_bits": "1010101111001011",
+          "latest_message_bit_accuracy": 1.0,
+          "presence_score": 1.0
         }
       ]
     },
@@ -45,21 +51,27 @@
           "path": "assets/audio/sample-b-l1.wav",
           "snr_db": 28.6703,
           "message_identity": 17,
-          "message_bits": "0010001111010110"
+          "message_bits": "0010001111010110",
+          "latest_message_bit_accuracy": 1.0,
+          "presence_score": 0.9999
         },
         {
           "layer": 2,
           "path": "assets/audio/sample-b-l2.wav",
           "snr_db": 27.0083,
           "message_identity": 55,
-          "message_bits": "0110111000010101"
+          "message_bits": "0110111000010101",
+          "latest_message_bit_accuracy": 1.0,
+          "presence_score": 1.0
         },
         {
           "layer": 3,
           "path": "assets/audio/sample-b-l3.wav",
           "snr_db": 25.9684,
           "message_identity": 101,
-          "message_bits": "1100101101010111"
+          "message_bits": "1100101101010111",
+          "latest_message_bit_accuracy": 0.9375,
+          "presence_score": 1.0
         }
       ]
     },
@@ -73,21 +85,27 @@
           "path": "assets/audio/sample-c-l1.wav",
           "snr_db": 28.8903,
           "message_identity": 25,
-          "message_bits": "0011001111101101"
+          "message_bits": "0011001111101101",
+          "latest_message_bit_accuracy": 1.0,
+          "presence_score": 0.9999
         },
         {
           "layer": 2,
           "path": "assets/audio/sample-c-l2.wav",
           "snr_db": 27.4505,
           "message_identity": 73,
-          "message_bits": "1001001001001001"
+          "message_bits": "1001001001001001",
+          "latest_message_bit_accuracy": 1.0,
+          "presence_score": 1.0
         },
         {
           "layer": 3,
           "path": "assets/audio/sample-c-l3.wav",
           "snr_db": 26.3034,
           "message_identity": 113,
-          "message_bits": "1110001011101110"
+          "message_bits": "1110001011101110",
+          "latest_message_bit_accuracy": 0.9375,
+          "presence_score": 1.0
         }
       ]
     }
