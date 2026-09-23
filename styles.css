@@ -150,10 +150,7 @@ th, td { padding: 13px 8px; border-bottom: 1px solid var(--line); text-align: ri
 th:first-child, td:first-child { text-align: left; }
 th { color: var(--muted); font-size: 13px; font-weight: 550; }
 tr.highlight { color: var(--blue); background: #edf4ff; font-weight: 750; }
-.table-note, .citation-note { margin: 14px 0 0; color: var(--muted); font-size: 13px; }
-.citation-section { border-top: 1px solid var(--line); background: #f5f7fa; }
-.citation-section h2 { font-size: 27px; }
-pre { overflow-x: auto; margin: 0; padding: 26px 28px; border: 1px solid var(--line); border-left: 4px solid var(--blue); border-radius: 6px; color: #4c5360; background: #fff; box-shadow: 0 12px 30px rgba(27, 34, 48, 0.05); font-size: 13px; line-height: 1.8; tab-size: 2; }
+.table-note { margin: 14px 0 0; color: var(--muted); font-size: 13px; }
 footer { border-top: 1px solid var(--line); background: #fff; }
 .footer-inner { display: flex; min-height: 90px; align-items: center; justify-content: space-between; gap: 24px; color: var(--muted); font-size: 13px; }
 .footer-inner strong { color: var(--ink); font-size: 17px; }
