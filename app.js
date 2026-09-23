@@ -14,18 +14,23 @@ const setIcon = (button, name) => {
 };
 
 // Enhance the sample controls with the same player used in the comparison.
-for (const audio of document.querySelectorAll(".audio-table audio")) {
+for (const [audioIndex, audio] of Array.from(
+  document.querySelectorAll(".audio-table audio"),
+).entries()) {
   const row = audio.closest(".audio-row");
-  const sample = row.querySelector(".sample-label strong").textContent;
+  const example = Math.floor(audioIndex / 4) + 1;
   const cells = Array.from(row.querySelectorAll('[role="cell"]'));
   const layer = cells.indexOf(audio.parentElement);
   const label = layer === 0 ? "Original audio" : `E${layer}`;
   const wrapper = document.createElement("div");
   wrapper.className = "mini-player";
-  wrapper.dataset.layer = `L${layer}`;
+  wrapper.dataset.layer = layer === 0 ? "Original" : `E${layer}`;
   const button = document.createElement("button");
   button.type = "button";
-  button.setAttribute("aria-label", `Play ${sample} ${label.toLowerCase()}`);
+  button.setAttribute(
+    "aria-label",
+    `Play audio example ${example}, ${label.toLowerCase()}`,
+  );
   const detail = document.createElement("div");
   const title = document.createElement("span");
   title.textContent = label;

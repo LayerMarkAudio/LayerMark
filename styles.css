@@ -101,9 +101,9 @@ audio { display: block; width: 100%; min-width: 0; height: 40px; }
 .ours .method-name strong { color: var(--blue); }
 
 .mini-player { --player-accent: #585e68; --player-tint: #eef0f3; display: grid; grid-template-columns: 36px minmax(0, 1fr); grid-template-rows: auto auto; align-items: center; column-gap: 11px; row-gap: 2px; min-height: 60px; position: relative; }
-.mini-player[data-layer="L1"] { --player-accent: var(--blue); --player-tint: #eaf1ff; }
-.mini-player[data-layer="L2"] { --player-accent: var(--teal); --player-tint: #e8f5f2; }
-.mini-player[data-layer="L3"] { --player-accent: var(--coral); --player-tint: #fff0ed; }
+.mini-player[data-layer="L1"], .mini-player[data-layer="E1"] { --player-accent: var(--blue); --player-tint: #eaf1ff; }
+.mini-player[data-layer="L2"], .mini-player[data-layer="E2"] { --player-accent: var(--teal); --player-tint: #e8f5f2; }
+.mini-player[data-layer="L3"], .mini-player[data-layer="E3"] { --player-accent: var(--coral); --player-tint: #fff0ed; }
 .mini-player button { grid-row: 1 / 3; display: grid; place-items: center; width: 36px; height: 36px; padding: 0; border: 0; border-radius: 50%; color: var(--player-accent); background: var(--player-tint); cursor: pointer; transition: background 160ms, color 160ms; }
 .mini-player button:hover, .mini-player.is-playing button { color: #fff; background: var(--player-accent); }
 .mini-player button svg { width: 16px; height: 16px; stroke-width: 2; }
