@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="LayerMark is a multi-message audio watermarking framework with overlap-aware embedding and recursive detection.">
+    <title>LayerMark | Multi-Message Audio Watermarking</title>
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="styles.css?v=20260923-refined">
+  </head>
+  <body>
+    <header class="hero" id="top">
+      <nav class="nav shell" aria-label="Primary navigation">
+        <a class="brand" href="#top"><i data-lucide="layers" aria-hidden="true"></i>LayerMark</a>
+        <div class="nav-links">
+          <a href="#overview">Overview</a>
+          <a href="#samples">Samples</a>
+          <a href="#comparison">Comparison</a>
+          <a href="#results">Results</a>
+        </div>
+      </nav>
+
+      <div class="hero-content shell">
+        <p class="eyebrow">Multi-message audio watermarking</p>
+        <h1>Layer<span>Mark</span></h1>
+        <p class="subtitle">Feature Overlap-Aware Embedding<br class="desktop-break"> and Recursive Detection</p>
+
+        <div class="authors" aria-label="Authors">
+          <span>Zhiheng Yan<sup>1</sup></span>
+          <span>Binhao Ma<sup>2</sup></span>
+          <span>Rui Duan<sup>2</sup></span>
+          <span>Hanqing Guo<sup>3</sup></span>
+        </div>
+        <p class="affiliations">
+          <sup>1</sup>Monash University Malaysia
+          <span aria-hidden="true">·</span>
+          <sup>2</sup>University of Missouri–Kansas City
+          <span aria-hidden="true">·</span>
+          <sup>3</sup>Indiana University Bloomington
+        </p>
+
+        <div class="hero-actions">
+          <a class="button primary" href="assets/paper/layermark.pdf"><i data-lucide="file-text" aria-hidden="true"></i>Paper</a>
+          <a class="button secondary" href="https://github.com/Y12-cm/LayerMark"><i data-lucide="code-xml" aria-hidden="true"></i>Code <small>Partial release</small></a>
+          <a class="button secondary" href="#samples"><i data-lucide="headphones" aria-hidden="true"></i>Audio samples</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section abstract-section">
+        <div class="shell narrow">
+          <h2>Abstract</h2>
+          <p class="lead">
+            Existing audio watermarking methods are primarily designed for single-message embedding, so a newly embedded watermark can overwrite earlier messages. LayerMark introduces a Multi-Layer Adapter to reduce inter-layer feature overlap during writing and a Multi-Layer Remover to progressively expose earlier messages during detection. Across four embedding layers, LayerMark retains multi-message detection while achieving an SNR of 33.62 dB, and it generalizes to unseen speech datasets and common audio transformations.
+          </p>
+        </div>
+      </section>
+
+      <section class="section section-tint" id="overview">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">01 / Method</p>
+              <h2>Overview of LayerMark</h2>
+            </div>
+            <p>
+              The Adapter adjusts each newly generated watermark feature before it is added. During verification, the Remover estimates the visible watermark feature, subtracts it, and repeats to recover earlier messages.
+            </p>
+          </div>
+          <figure class="figure-frame">
+            <img src="assets/images/layermark-overview.png" alt="LayerMark writing and recursive detection pipeline">
+            <figcaption>Overview of LayerMark multi-layer watermark writing and recursive detection.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section" id="samples">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">02 / Audio samples</p>
+              <h2>Sequential watermark embedding</h2>
+            </div>
+            <p>
+              Listen to the same utterance before watermarking and after one, two, and three messages are embedded in sequence. The clips below are real outputs from the local LayerMark demo checkpoint.
+            </p>
+          </div>
+
+          <div class="audio-status" aria-label="Audio availability legend">
+            <span>16 kHz speech</span>
+            <span>Three distinct message identities per sample</span>
+          </div>
+
+          <div class="audio-table" role="table" aria-label="LayerMark sequential watermark samples">
+            <div class="audio-row audio-header" role="row">
+              <div role="columnheader">Sample</div>
+              <div role="columnheader">Original</div>
+              <div role="columnheader">1 layer</div>
+              <div role="columnheader">2 layers</div>
+              <div role="columnheader">3 layers</div>
+            </div>
+
+            <div class="audio-row" role="row">
+              <div class="sample-label" role="rowheader"><strong>Sample A</strong><span>Speech</span></div>
+              <div role="cell"><audio controls preload="metadata" src="assets/audio/sample-a-original.wav">Audio playback is not supported.</audio></div>
+              <div role="cell"><audio controls preload="metadata" src="assets/audio/sample-a-l1.wav">Audio playback is not supported.</audio></div>
+              <div role="cell"><audio controls preload="metadata" src="assets/audio/sample-a-l2.wav">Audio playback is not supported.</audio></div>
+              <div role="cell"><audio controls preload="metadata" src="assets/audio/sample-a-l3.wav">Audio playback is not supported.</audio></div>
+            </div>
+
+            <div class="audio-row" role="row">
+              <div class="sample-label" role="rowheader"><strong>Sample B</strong><span>Speech</span></div>
+              <div role="cell"><audio controls preload="metadata" src="assets/audio/sample-b-original.wav">Audio playback is not supported.</audio></div>
+              <div role="cell"><audio controls preload="metadata" src="assets/audio/sample-b-l1.wav">Audio playback is not supported.</audio></div>
+              <div role="cell"><audio controls preload="metadata" src="assets/audio/sample-b-l2.wav">Audio playback is not supported.</audio></div>
+              <div role="cell"><audio controls preload="metadata" src="assets/audio/sample-b-l3.wav">Audio playback is not supported.</audio></div>
+            </div>
+
+            <div class="audio-row" role="row">
+              <div class="sample-label" role="rowheader"><strong>Sample C</strong><span>Speech</span></div>
+              <div role="cell"><audio controls preload="metadata" src="assets/audio/sample-c-original.wav">Audio playback is not supported.</audio></div>
+              <div role="cell"><audio controls preload="metadata" src="assets/audio/sample-c-l1.wav">Audio playback is not supported.</audio></div>
+              <div role="cell"><audio controls preload="metadata" src="assets/audio/sample-c-l2.wav">Audio playback is not supported.</audio></div>
+              <div role="cell"><audio controls preload="metadata" src="assets/audio/sample-c-l3.wav">Audio playback is not supported.</audio></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section comparison-section" id="comparison">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">03 / Listening comparison</p>
+              <h2>Comparison with baselines</h2>
+            </div>
+            <p>
+              Each method receives the same source utterance with method-specific message payloads. The columns compare how the audio sounds after one, two, and three sequential embeddings.
+            </p>
+          </div>
+
+          <div class="baseline-source">
+            <div class="source-copy"><span>Reference source</span><small>Sample A · clean speech · 16 kHz</small></div>
+            <div class="mini-player reference-player">
+              <button type="button" aria-label="Play clean reference audio">▶</button>
+              <div><span>Original audio</span><div class="player-track"><i></i></div></div>
+              <time>--:--</time>
+              <audio preload="metadata" src="assets/audio/sample-a-original.wav"></audio>
+            </div>
+          </div>
+
+          <div class="comparison-note">
+            <span>Sample A · sequential embedding</span>
+            <span>SNR is measured against the original audio.</span>
+          </div>
+
+          <div class="comparison-table" role="table" aria-label="Baseline audio comparison">
+            <div class="comparison-row comparison-header" role="row">
+              <div role="columnheader">Method</div>
+              <div role="columnheader">1 layer</div>
+              <div role="columnheader">2 layers</div>
+              <div role="columnheader">3 layers</div>
+            </div>
+            <div class="comparison-row" role="row">
+              <div class="method-name" role="rowheader"><strong>Timbre</strong><small>Official 30-bit model</small></div>
+              <div class="mini-player" data-layer="L1"><button type="button" aria-label="Play Timbre one-layer audio">▶</button><div><span>L1 · 26.2 dB</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/timbre-sample-a-l1.wav"></audio></div>
+              <div class="mini-player" data-layer="L2"><button type="button" aria-label="Play Timbre two-layer audio">▶</button><div><span>L2 · 20.8 dB</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/timbre-sample-a-l2.wav"></audio></div>
+              <div class="mini-player" data-layer="L3"><button type="button" aria-label="Play Timbre three-layer audio">▶</button><div><span>L3 · 17.5 dB</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/timbre-sample-a-l3.wav"></audio></div>
+            </div>
+            <div class="comparison-row" role="row">
+              <div class="method-name" role="rowheader"><strong>AudioSeal</strong><small>Official 16-bit model</small></div>
+              <div class="mini-player" data-layer="L1"><button type="button" aria-label="Play AudioSeal one-layer audio">▶</button><div><span>L1 · 31.0 dB</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/audioseal-sample-a-l1.wav"></audio></div>
+              <div class="mini-player" data-layer="L2"><button type="button" aria-label="Play AudioSeal two-layer audio">▶</button><div><span>L2 · 27.9 dB</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/audioseal-sample-a-l2.wav"></audio></div>
+              <div class="mini-player" data-layer="L3"><button type="button" aria-label="Play AudioSeal three-layer audio">▶</button><div><span>L3 · 26.1 dB</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/audioseal-sample-a-l3.wav"></audio></div>
+            </div>
+            <div class="comparison-row" role="row">
+              <div class="method-name" role="rowheader"><strong>WavMark</strong><small>Official 16-bit model</small></div>
+              <div class="mini-player" data-layer="L1"><button type="button" aria-label="Play WavMark one-layer audio">▶</button><div><span>L1 · 37.8 dB</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/wavmark-sample-a-l1.wav"></audio></div>
+              <div class="mini-player" data-layer="L2"><button type="button" aria-label="Play WavMark two-layer audio">▶</button><div><span>L2 · 33.3 dB</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/wavmark-sample-a-l2.wav"></audio></div>
+              <div class="mini-player" data-layer="L3"><button type="button" aria-label="Play WavMark three-layer audio">▶</button><div><span>L3 · 29.7 dB</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/wavmark-sample-a-l3.wav"></audio></div>
+            </div>
+            <div class="comparison-row ours" role="row">
+              <div class="method-name" role="rowheader"><strong>LayerMark</strong><small>Ours · sequential</small></div>
+              <div class="mini-player" data-layer="L1"><button type="button" aria-label="Play LayerMark one-layer audio">▶</button><div><span>L1 · 32.8 dB</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/sample-a-l1.wav"></audio></div>
+              <div class="mini-player" data-layer="L2"><button type="button" aria-label="Play LayerMark two-layer audio">▶</button><div><span>L2 · 30.5 dB</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/sample-a-l2.wav"></audio></div>
+              <div class="mini-player" data-layer="L3"><button type="button" aria-label="Play LayerMark three-layer audio">▶</button><div><span>L3 · 29.1 dB</span><div class="player-track"><i></i></div></div><time>--:--</time><audio preload="metadata" src="assets/audio/sample-a-l3.wav"></audio></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="results">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">04 / Results</p>
+              <h2>Layer-wise message recovery</h2>
+            </div>
+            <p>
+              The summary below follows the paper evaluation. Per-sample decoding values will be added beside each released audio clip after the website demo set is frozen.
+            </p>
+          </div>
+
+          <div class="metrics-grid" aria-label="Headline results">
+            <div class="metric"><span>4</span><p>embedded messages evaluated</p></div>
+            <div class="metric"><span>33.62 dB</span><p>SNR after sequential embedding</p></div>
+            <div class="metric"><span>0.81</span><p>earliest-message bit accuracy</p></div>
+            <div class="metric"><span>1.00</span><p>latest-message bit accuracy</p></div>
+          </div>
+
+          <div class="result-layout">
+            <div class="result-table-wrap">
+              <h3>Four-layer detection</h3>
+              <table>
+                <thead><tr><th>Method</th><th>m1</th><th>m2</th><th>m3</th><th>m4</th></tr></thead>
+                <tbody>
+                  <tr><td>Timbre</td><td>0.00</td><td>0.00</td><td>0.00</td><td>1.00</td></tr>
+                  <tr><td>AudioSeal</td><td>0.00</td><td>0.00</td><td>0.00</td><td>1.00</td></tr>
+                  <tr><td>WavMark</td><td>0.00</td><td>0.00</td><td>0.00</td><td>1.00</td></tr>
+                  <tr><td>AudioMarkNet</td><td>0.00</td><td>0.00</td><td>0.00</td><td>1.00</td></tr>
+                  <tr class="highlight"><td>LayerMark</td><td>0.81</td><td>0.89</td><td>0.94</td><td>1.00</td></tr>
+                </tbody>
+              </table>
+              <p class="table-note">Bit accuracy averaged under the paper's matched evaluation protocol.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section citation-section" id="citation">
+        <div class="shell narrow">
+          <p class="section-kicker">05 / Citation</p>
+          <h2>BibTeX</h2>
+          <pre><code>@inproceedings{yan_layermark,
+  title     = {LayerMark: Multi-Message Audio Watermarking with
+               Feature Overlap-Aware Embedding and Recursive Detection},
+  author    = {Yan, Zhiheng and Ma, Binhao and Duan, Rui and Guo, Hanqing},
+  note      = {Research manuscript}
+}</code></pre>
+          <p class="citation-note">Publication metadata will be updated after the final proceedings record is available.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="shell footer-inner">
+        <strong>LayerMark</strong>
+        <span>Research project page</span>
+      </div>
+    </footer>
+
+    <script src="assets/lucide.min.js"></script>
+    <script src="app.js?v=20260923-refined"></script>
+  </body>
+</html>
