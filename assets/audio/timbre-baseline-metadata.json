@@ -1,0 +1,31 @@
+{
+  "method": "Timbre",
+  "implementation": "facebookresearch/omnisealbench",
+  "checkpoint": "compressed_none-conv2_ep_20_2023-02-14_02_24_57.pth.tar",
+  "source": "data/external_speech/librispeech/1272_128104_0000.wav",
+  "sample_rate": 16000,
+  "protocol": "Sequentially embed deterministic messages A, B, and C into the previous output.",
+  "layers": [
+    {
+      "layer": 1,
+      "message": "A",
+      "message_bits": "000011001111100101010010111000",
+      "path": "assets/audio/timbre-sample-a-l1.wav",
+      "snr_db": 21.2931
+    },
+    {
+      "layer": 2,
+      "message": "B",
+      "message_bits": "010111101000000001001010000100",
+      "path": "assets/audio/timbre-sample-a-l2.wav",
+      "snr_db": 16.9925
+    },
+    {
+      "layer": 3,
+      "message": "C",
+      "message_bits": "011100011011000011100011010111",
+      "path": "assets/audio/timbre-sample-a-l3.wav",
+      "snr_db": 14.2475
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "method": "WavMark",
+  "package": "wavmark==0.0.3",
+  "source": "data/external_speech/librispeech/1272_128104_0000.wav",
+  "sample_rate": 16000,
+  "protocol": "Sequentially embed messages A, B, and C into the previous output.",
+  "layers": [
+    {
+      "layer": 1,
+      "message": "A",
+      "message_bits": "1011001010100110",
+      "path": "assets/audio/wavmark-sample-a-l1.wav",
+      "snr_db": 34.5898
+    },
+    {
+      "layer": 2,
+      "message": "B",
+      "message_bits": "0100110101011001",
+      "path": "assets/audio/wavmark-sample-a-l2.wav",
+      "snr_db": 31.5014
+    },
+    {
+      "layer": 3,
+      "message": "C",
+      "message_bits": "1100101001010011",
+      "path": "assets/audio/wavmark-sample-a-l3.wav",
+      "snr_db": 28.2923
+    }
+  ]
+}
