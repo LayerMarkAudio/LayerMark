@@ -19,7 +19,7 @@ for (const audio of document.querySelectorAll(".audio-table audio")) {
   const sample = row.querySelector(".sample-label strong").textContent;
   const cells = Array.from(row.querySelectorAll('[role="cell"]'));
   const layer = cells.indexOf(audio.parentElement);
-  const label = layer === 0 ? "Original audio" : `Layer ${layer}`;
+  const label = layer === 0 ? "Original audio" : `E${layer}`;
   const wrapper = document.createElement("div");
   wrapper.className = "mini-player";
   wrapper.dataset.layer = `L${layer}`;
