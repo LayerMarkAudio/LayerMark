@@ -2,7 +2,7 @@
 
 Multi-message audio watermarking with feature overlap-aware embedding and recursive detection.
 
-[Project page](https://y12-cm.github.io/LayerMark/) | [Manuscript](assets/paper/layermark.pdf)
+[Project page](https://layermarkaudio.github.io/LayerMark/) | [Manuscript](assets/paper/layermark.pdf)
 
 ## Release scope
 
